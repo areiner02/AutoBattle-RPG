@@ -31,8 +31,14 @@ public class TeamManager
 
         for (int i = 0; i < characterList.Count; i++)
         {
-            if (i % 2 == 0) blueTeam.AddMember(characterList[i]);
-            else redTeam.AddMember(characterList[i]);
+            if (i % 2 == 0)
+            {
+                blueTeam.AddMember(characterList[i]);
+            }
+            else
+            {
+                redTeam.AddMember(characterList[i]);
+            }
         }
     }
 

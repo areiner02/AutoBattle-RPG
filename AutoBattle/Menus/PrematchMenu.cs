@@ -12,7 +12,7 @@ public static class PrematchMenu
         foreach (Character character in characterList)
         {
             Console.ForegroundColor = character.team.color;
-            Console.WriteLine($"({character.team.name}) {character.name} selected {character.characterClass}");
+            Console.WriteLine($"({character.team.name}) {character.name} selected {character.characterClassType}");
             Console.ResetColor();
         }
 

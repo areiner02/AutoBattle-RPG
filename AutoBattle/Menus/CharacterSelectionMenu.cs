@@ -2,7 +2,7 @@
 
 public static class CharacterSelectionMenu
 {
-    public static CharacterClass PromptCharacterSelection()
+    public static CharacterClassType PromptCharacterSelection()
     {
         while(true)
         {
@@ -12,13 +12,13 @@ public static class CharacterSelectionMenu
             switch (input.Key)
             {
                 case ConsoleKey.D1:
-                    return CharacterClass.Warrior;
+                    return CharacterClassType.Warrior;
                 case ConsoleKey.D2:
-                    return CharacterClass.Archer;
+                    return CharacterClassType.Archer;
                 case ConsoleKey.D3:
-                    return CharacterClass.Mage;
+                    return CharacterClassType.Mage;
                 case ConsoleKey.D4:
-                    return CharacterClass.Cleric;
+                    return CharacterClassType.Cleric;
                 default:
                     Console.Clear();
                     break;

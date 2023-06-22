@@ -1,7 +1,12 @@
-﻿public enum CharacterClass : uint
+﻿public class CharacterClass
 {
-    Warrior = 1,
-    Archer = 2,
-    Mage = 3,
-    Cleric = 4
+    public string name;
+    public CharacterClassType type;
+    public int baseHealth;
+    public int manaRecovery;
+    public int baseDamage;
+    public int attackRange;
+    public CharacterSkill skill;
+    public delegate void skillDelegate(Character performer, Character target);
+    public skillDelegate skillImplementation;
 }
