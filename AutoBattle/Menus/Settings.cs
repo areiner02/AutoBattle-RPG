@@ -68,7 +68,7 @@ public static class Settings
         string widthInput = Console.ReadLine();
         try
         {
-            gridColumns = int.Parse(widthInput) > 25 ? 25 : int.Parse(widthInput);
+            gridColumns = int.Parse(widthInput) > 25 || int.Parse(widthInput) < 0 ? 10 : int.Parse(widthInput);
         }
         catch
         {
@@ -81,7 +81,7 @@ public static class Settings
         string heightInput = Console.ReadLine();
         try
         {
-            gridRows = int.Parse(heightInput) > 25 ? 25 : int.Parse(heightInput);
+            gridRows = int.Parse(heightInput) > 25 || int.Parse(heightInput) < 0 ? 10 : int.Parse(heightInput);
         }
         catch
         {
