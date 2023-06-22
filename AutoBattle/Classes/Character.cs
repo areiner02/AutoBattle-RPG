@@ -118,13 +118,6 @@ public class Character
         }
 
         return false;
-
-        //if (currentBox.index > Grid.columns && currentBox.x == target.currentBox.x && currentBox.y == target.currentBox.y - characterClass.attackRange) return true;
-        //if (currentBox.index < Grid.tileList.Count - Grid.columns && currentBox.x == target.currentBox.x && currentBox.y == target.currentBox.y + characterClass.attackRange) return true;
-        //if (currentBox.index > 0 && currentBox.x == target.currentBox.x - characterClass.attackRange && currentBox.y == target.currentBox.y) return true;
-        //if (currentBox.index < Grid.tileList.Count - 1 && currentBox.x == target.currentBox.x + characterClass.attackRange && currentBox.y == target.currentBox.y) return true;
-
-        //return false;
     }
 
     private void MoveTowardTarget()
