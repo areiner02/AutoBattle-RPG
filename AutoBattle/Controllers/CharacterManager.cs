@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class CharacterManager
 {
@@ -6,6 +7,10 @@ public class CharacterManager
     List<Character> npcCharacters;
 
     List<Character> matchCharacterList;
+
+    int identifierCount = 0;
+    int identifierIndex = 0;
+    char[] identifierArray = new char[3] { '+', '*', '=' };
 
     #region SINGLETON
     private CharacterManager() { }
@@ -28,7 +33,7 @@ public class CharacterManager
         playerCharacter = InstantiateCharacter(CharacterSelectionMenu.PromptCharacterSelection(), Settings.playerName);
         for (int i = 1; i < Settings.characterAmount; i++)
         {
-            npcCharacters.Add(InstantiateCharacter((CharacterClass)RandomHelper.GetRandomInt(1, 5), $"CPU {matchCharacterList.Count}"));
+            npcCharacters.Add(InstantiateCharacter((CharacterClassType)RandomHelper.GetRandomInt(1, 5), $"CPU {matchCharacterList.Count}"));
         }
     }
 
@@ -40,7 +45,7 @@ public class CharacterManager
         }
     }
 
-    private Character InstantiateCharacter(CharacterClass characterClass, string name)
+    private Character InstantiateCharacter(CharacterClassType characterClass, string name)
     {
         Character character = new Character(matchCharacterList.Count, name, characterClass);
 
@@ -57,5 +62,16 @@ public class CharacterManager
     public void ShuffleCharacterList()
     {
         matchCharacterList = RandomHelper.ShuffleList(matchCharacterList);
+        for(int i = 0; i < matchCharacterList.Count; i++)
+        {
+            matchCharacterList[i].identifier = identifierArray[identifierIndex];
+
+            identifierCount++;
+            if(identifierCount == 2)
+            {
+                identifierIndex++;
+                identifierCount = 0;
+            }
+        }
     }
 }

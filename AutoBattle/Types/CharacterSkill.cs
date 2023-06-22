@@ -1,6 +1,6 @@
-﻿public struct CharacterSkills
+﻿public class CharacterSkill
 {
-    string name;
-    float damage;
-    float damageMultiplier;
+    public string name;
+    public int damage;
+    public StatusEffect effect;
 }

@@ -61,8 +61,7 @@ public static class Grid
                 if (currentTile.occupied)
                 {
                     Console.ForegroundColor = currentTile.tileColor;
-                    //Console.Write("[X]\t");
-                    Console.Write($"[{currentTile.occupyingCharacter.name}]\t");
+                    Console.Write($"[{currentTile.occupyingCharacter.identifier}]\t");
                 }
                 else
                 {
